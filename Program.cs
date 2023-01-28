@@ -1,6 +1,8 @@
 global using webtesting.Models;
 global using webtesting.Services.CharacterService;
-using webtesting.Controllers;
+global using webtesting.Dtos.Characters;
+global using AutoMapper;
+global using webtesting.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +11,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddSwaggerGen();
+
 builder.Services.AddScoped<Icharacterservice, CharacterService>();
 
 var app = builder.Build();

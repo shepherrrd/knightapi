@@ -34,16 +34,16 @@ namespace webtesting.Controllers
             _characterservice = characterservice;
         }
         [HttpGet("users")]
-        public async Task<ActionResult<ServiceResponse<List<user>>>> Get(){
+        public async Task<ActionResult<ServiceResponse<List<GetCharacterDto>>>> Get(){
             return Ok(await _characterservice.GetUsers());
         }
         [HttpGet("{index}")]
-        public async Task<ActionResult <ServiceResponse<List<user>>>> GetSingle(int index){
+        public async Task<ActionResult <ServiceResponse<List<GetCharacterDto>>>> GetSingle(int index){
             return Ok(await _characterservice.GetuserbyId(index));
         }
        [HttpPost("Add")]
        
-        public async Task<ActionResult <List<user>>> AddCharacter(user newuser){
+        public async Task<ActionResult <List<GetCharacterDto>>> AddCharacter(AddCharacterDto newuser){
         
             
             return Ok(await _characterservice.AddCharacter(newuser));

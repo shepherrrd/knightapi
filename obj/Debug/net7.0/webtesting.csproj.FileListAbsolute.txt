@@ -32,3 +32,5 @@ C:\csharp\webtesting\obj\Debug\net7.0\webtesting.pdb
 C:\csharp\webtesting\obj\Debug\net7.0\webtesting.genruntimeconfig.cache
 C:\csharp\webtesting\obj\Debug\net7.0\ref\webtesting.dll
 C:\csharp\webtesting\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\csharp\webtesting\bin\Debug\net7.0\AutoMapper.dll
+C:\csharp\webtesting\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
