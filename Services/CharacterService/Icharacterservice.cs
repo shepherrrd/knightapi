@@ -13,5 +13,9 @@ namespace webtesting.Services.CharacterService
         Task<ServiceResponse<GetCharacterDto>> GetuserbyId(int index);
 
         Task<ServiceResponse<List<GetCharacterDto>>> AddCharacter(AddCharacterDto newuser);
+
+        Task<ServiceResponse<GetCharacterDto>> UpdateCharacter(UpdateCharacterDto updateCharacter);
+        Task<ServiceResponse<List<GetCharacterDto>>> DeleteCharacter(int id);
+
     }
 }

@@ -8,13 +8,12 @@ namespace webtesting.Models
     public class user
     {
         public int Id { get; set; } = 0;
-        public int character { get; set; }
         public string name { get; set; } = "Freddo";
         public int Hp{ get; set; } = 100;
         public int Strength { get; set; } = 10;
         public int Defence { get; set; } = 10;
         public int Intelligence { get; set; } = 10;
-        
+        public Users? User { get; set; }        
         public rpgClass Class {get; set;} = rpgClass.knight; 
     }
     

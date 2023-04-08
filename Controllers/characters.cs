@@ -72,12 +72,28 @@ namespace webtesting.Controllers
             return Ok(result);
         }
     }
+
+    [HttpPut("update")]
+    public async Task<ActionResult<ServiceResponse<GetCharacterDto>>> UpdateCharacter(UpdateCharacterDto updatedCharacter){
+        var response = await _characterservice.UpdateCharacter(updatedCharacter);
+            if(response.data is null){
+                return NotFound();
+            }
+            return Ok(response);
+        }
+
+    [HttpDelete("{id}")]
+
+    public async Task<ActionResult<ServiceResponse<List<GetCharacterDto>>>> DeleteCharacter(int id){
+        var response = await _characterservice.DeleteCharacter(id);
+        if(response.isDeleted is true){
+            return Ok("Deleted");
+        }
+        return Ok(response);
+    }
+
+
 }
  
  }
  
-
-
-        
-    
-    

@@ -8,7 +8,7 @@ namespace webtesting.Dtos.Characters
     public class AddCharacterDto
     {
         
-        public int character { get; set; }
+        
         public string name { get; set; } = "Freddo";
         public int Hp{ get; set; } = 100;
         public int Strength { get; set; } = 10;

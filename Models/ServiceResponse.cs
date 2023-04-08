@@ -13,5 +13,7 @@ public class ServiceResponse <T>
 
         public string Mymessage {get; set;} = string.Empty;
 
+        public bool isDeleted {get; set;} = false;
+
     }
 }

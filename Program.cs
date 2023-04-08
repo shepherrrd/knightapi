@@ -3,11 +3,16 @@ global using webtesting.Services.CharacterService;
 global using webtesting.Dtos.Characters;
 global using AutoMapper;
 global using webtesting.Controllers;
+global using Microsoft.EntityFrameworkCore;
+global using webtesting.Data;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddDbContext<DataContext>(options => 
+options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -15,6 +20,8 @@ builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<Icharacterservice, CharacterService>();
+builder.Services.AddScoped<IAuthRespository, AuthRepository>();
+
 
 var app = builder.Build();
 
